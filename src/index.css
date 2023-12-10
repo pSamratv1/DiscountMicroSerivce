@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/chillax");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-width: 360px;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #f5f5f5; */
+  color: #35353d;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px; /* vertical scrollbar width */
+  height: 4px; /* horizontal scrollbar height */
+  scrollbar-gutter: stable both-edges;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 2rem;
+  background: #e2e2ea;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #4339f2;
+  border-radius: 100vh;
+  border: 3px solid #6d64e4;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3d34ee;
+}
+
+/*  Margins for scrollbar track */
+.scrollbar-mt-90px::-webkit-scrollbar-track {
+  margin-top: 90px;
+}
+
+.scrollbar-mt-60px::-webkit-scrollbar-track {
+  margin-top: 60px;
+}
+
+.scrollbar-mt-32px::-webkit-scrollbar-track {
+  margin-top: 32px;
+}
+
+.scrollbar-mt-150px::-webkit-scrollbar-track {
+  margin-top: 32px;
+}
+
+.scrollbar-mb-60px::-webkit-scrollbar-track {
+  margin-bottom: 60px;
+}
+
+.scrollbar-my-32px::-webkit-scrollbar-track {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.scrollbar-mt-4rem::-webkit-scrollbar-track {
+  margin-top: 4rem;
+}
+
+.scrollbar-mt-52px::-webkit-scrollbar-track {
+  margin-top: 52px;
+}
+
+@media not all and (min-width: 640px) {
+  .scrollbar-mt-60px::-webkit-scrollbar-track {
+    margin-top: 80px;
+  }
+}
+
+.scrollbar::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+}
+
+.bg-transparent {
+  background-color: transparent;
+  color: black;
+}
+
+.active-border {
+  border-color: #5541d8;
+  font-weight: 500;
+  color: black;
+}
+
+.logo-name {
+  font-family: "Chillax", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 36px;
+  letter-spacing: 0.02em;
+  display: flex;
+}
+
+.rounded-checkbox {
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid black;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.rounded-checkbox:checked {
+  appearance: auto;
+  clip-path: circle(50% at 50% 50%);
+  background-color: blue;
+}
