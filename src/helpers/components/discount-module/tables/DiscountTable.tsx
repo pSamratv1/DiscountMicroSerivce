@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DISCOUNT_TABLE_MEMO } from "assets/org-module/views/organization/discountPage";
+import {
+  DISCOUNT_TABLE_DATA,
+  DISCOUNT_TABLE_MEMO,
+} from "assets/org-module/views/organization/discountPage";
 import DesignOne from "helpers/components/common/table/design-one/DesignOne";
 import TableActions from "helpers/components/role-module/actions/TableActions";
 import { useNavigate } from "react-router-dom";
@@ -14,15 +17,17 @@ import {
 } from "redux-app/discount-module/DiscountSlice";
 import DeleteDiscountForm from "../role/delete/DeleteDiscountForm";
 import { RootState } from "redux-app/store";
+import { useMemo } from "react";
 
 export default function DiscountTable() {
   // Props
 
   // Redux
   const dispatch = useAppDispatch();
-  const { details } = useAppSelector(
-    (state: RootState) => state.Discount.discount.view.response
-  );
+  // // const { details } = useAppSelector(
+  // //   (state: RootState) => state.Discount.discount.view.response
+  // // );
+  const details = DISCOUNT_TABLE_DATA;
 
   // Hooks
   const navigate = useNavigate();
@@ -44,12 +49,10 @@ export default function DiscountTable() {
     },
   });
 
-  const data: any = details.map((item: any) => ({
+  const data: any = DISCOUNT_TABLE_DATA.map((item: any) => ({
     ...item,
     actions: <TableActions {...getRoutes(item?.id)} />,
   }));
-
-  console.log("MY details   ", details);
 
   const designOneProps = { columns, data };
 
